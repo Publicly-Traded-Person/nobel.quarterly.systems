@@ -65,6 +65,10 @@ Add an entry to `sources.yaml` with an `id`, `name`, `url`, `kind`, `weight`, an
 - `bun run test` is the suite (`bunx tsc --noEmit && bun test`).
 - `bunx serve dist` or any static server to preview.
 
+## Caching
+
+Pages serves static assets with a four-hour `max-age`, so the build writes `style.<hash>.css` and `replay.<hash>.js` and links those. A deploy that changes CSS or JS therefore never leaves a browser on the old file. The plain `style.css` and `replay.js` are still written for anyone linking them directly.
+
 ## Deploying
 
 Cloudflare Pages, git-connected (created in the dashboard, never with `wrangler pages project create`). Production branch `main`, build command `bun install && bun run build`, output directory `dist`, environment variable `BUN_VERSION=1.3.0`. Every push to `main` deploys. Custom domain `nobel.quarterly.systems` was added through the dashboard's Custom domains wizard.
