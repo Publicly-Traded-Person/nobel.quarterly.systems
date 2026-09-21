@@ -1,0 +1,6 @@
+- id: marginal-revolution
+  name: Marginal Revolution
+  url: https://marginalrevolution.com
+  kind: rank
+  weight: 1.5
+  blurb: Tyler Cowen's picks.

@@ -1,18 +1,67 @@
-// Placeholder build. The real generator replaces this file.
-import { mkdir, writeFile } from "node:fs/promises";
+// Wire load → score → render and write dist/.
+import { cp, mkdir, rm, writeFile } from "node:fs/promises";
+import { dirname, join } from "node:path";
+import { loadSite } from "./load";
+import { computeTimeline } from "./score";
+import {
+  renderCandidate,
+  renderFeed,
+  renderHome,
+  renderReplay,
+  renderScore,
+  renderSources,
+  renderUpdate,
+} from "./render";
 
-const out = "dist";
-await mkdir(out, { recursive: true });
-await writeFile(
-  `${out}/index.html`,
-  `<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KmikeyM Covers the Econ Nobel</title>
-<style>body{font-family:system-ui,sans-serif;max-width:40rem;margin:4rem auto;padding:0 1rem;line-height:1.5}</style>
-</head><body>
-<h1>KmikeyM Covers the Econ Nobel</h1>
-<p>The Power Rankings are being built. First update: Clarivate named four on September 17, 2026.</p>
-</body></html>
-`,
-);
-console.log(`wrote ${out}/index.html`);
+const ASSETS = join(dirname(new URL(import.meta.url).pathname), "assets");
+
+export async function build(root: string, out: string): Promise<void> {
+  const site = await loadSite(root);
+  const timeline = computeTimeline(site);
+
+  await rm(out, { recursive: true, force: true });
+  await mkdir(out, { recursive: true });
+
+  const write = async (rel: string, content: string) => {
+    const file = join(out, rel);
+    await mkdir(dirname(file), { recursive: true });
+    await writeFile(file, content);
+  };
+
+  await write("index.html", renderHome(site, timeline));
+  await write("score/index.html", renderScore(site, timeline));
+  await write("replay/index.html", renderReplay(site));
+  await write("sources/index.html", renderSources(site));
+  await write("feed.xml", renderFeed(site));
+  for (const u of site.updates)
+    await write(`updates/${u.slug}/index.html`, renderUpdate(site, timeline, u));
+  for (const c of site.candidates)
+    await write(`candidates/${c.id}/index.html`, renderCandidate(site, timeline, c));
+
+  const candidates = Object.fromEntries(
+    site.candidates.map((c) => [c.id, { name: c.name, affiliation: c.affiliation, theme: c.theme }]),
+  );
+  await write(
+    "timeline.json",
+    JSON.stringify({ generated: new Date().toISOString(), themes: site.config.themes, candidates, timeline }),
+  );
+
+  await cp(ASSETS, out, { recursive: true });
+  console.log(
+    `wrote ${out}: ${site.candidates.length} candidates, ${site.updates.length} updates, ${timeline.length} snapshots`,
+  );
+}
+
+function arg(name: string, fallback: string): string {
+  const i = process.argv.indexOf(name);
+  return i >= 0 && process.argv[i + 1] ? process.argv[i + 1]! : fallback;
+}
+
+if (import.meta.main) {
+  try {
+    await build(arg("--root", "."), arg("--out", "dist"));
+  } catch (e) {
+    console.error(String(e instanceof Error ? e.message : e));
+    process.exit(1);
+  }
+}

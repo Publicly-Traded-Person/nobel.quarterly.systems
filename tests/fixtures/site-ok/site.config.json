@@ -1,0 +1,6 @@
+{
+  "title": "Fixture Nobel",
+  "url": "https://example.test",
+  "themes": { "macro": "Macro", "market-design": "Market design" },
+  "tiers": { "lock": 70, "contender": 40, "darkhorse": 15 }
+}

@@ -1,0 +1,18 @@
+- id: clarivate
+  name: Clarivate Citation Laureates
+  url: https://clarivate.com/citation-laureates/economics/
+  kind: named
+  weight: 3
+  blurb: The strongest quantitative predictor.
+- id: polymarket
+  name: Polymarket
+  url: https://polymarket.com
+  kind: prob
+  weight: 3
+  blurb: A prediction market.
+- id: kmikeym
+  name: KmikeyM desk
+  url: https://nobel.quarterly.systems
+  kind: named
+  weight: 0.5
+  blurb: Our own calls.
