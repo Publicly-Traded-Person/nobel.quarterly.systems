@@ -66,7 +66,7 @@ describe("render", () => {
   test("replay page has a range input and the script [M5]", () => {
     const html = renderReplay(site);
     expect(html).toContain('type="range"');
-    expect(html).toContain("replay.js");
+    expect(html).toMatch(/replay(\.[a-f0-9]+)?\.js/);
   });
 
   test("sources page lists every source", () => {

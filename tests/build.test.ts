@@ -31,6 +31,19 @@ test("build writes every page and asset [M1]", async () => {
   }
 });
 
+test("stylesheet and script are fingerprinted and referenced", async () => {
+  const out = await mkdtemp(join(tmpdir(), "nobel-build-"));
+  await build(OK, out);
+  const html = await readFile(join(out, "index.html"), "utf8");
+  const m = html.match(/href="\/(style\.[a-f0-9]{10}\.css)"/);
+  expect(m).not.toBeNull();
+  expect(await exists(join(out, m![1]!))).toBe(true);
+  const replay = await readFile(join(out, "replay", "index.html"), "utf8");
+  const j = replay.match(/src="\/(replay\.[a-f0-9]{10}\.js)"/);
+  expect(j).not.toBeNull();
+  expect(await exists(join(out, j![1]!))).toBe(true);
+});
+
 test("timeline.json has one snapshot per update [M2]", async () => {
   const out = await mkdtemp(join(tmpdir(), "nobel-build-"));
   await build(OK, out);

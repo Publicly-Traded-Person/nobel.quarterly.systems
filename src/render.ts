@@ -10,6 +10,9 @@ import type {
 } from "./types";
 import { heat } from "./score";
 
+/** Fingerprinted asset paths, set by the build so every deploy busts caches. */
+export const assets = { css: "/style.css", js: "/replay.js" };
+
 export function esc(s: string): string {
   return s
     .replaceAll("&", "&amp;")
@@ -57,7 +60,7 @@ export function layout(
 <meta name="description" content="${esc(opts.description ?? "KmikeyM covers the Economics Nobel like a sports desk.")}">
 <link rel="alternate" type="application/rss+xml" title="${esc(site.config.title)} updates" href="/feed.xml">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="${assets.css}">
 ${opts.head ?? ""}
 </head>
 <body>
@@ -349,7 +352,7 @@ export function renderReplay(site: Site): string {
     title: "Season replay",
     active: "/replay/",
     body,
-    head: `<script defer src="/replay.js"></script>`,
+    head: `<script defer src="${assets.js}"></script>`,
   });
 }
 

@@ -1,9 +1,11 @@
 // Wire load → score → render and write dist/.
-import { cp, mkdir, rm, stat, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, rm, stat, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 import { loadSite } from "./load";
 import { computeTimeline } from "./score";
 import {
+  assets,
   renderCandidate,
   renderFeed,
   renderHome,
@@ -21,6 +23,19 @@ export async function build(root: string, out: string): Promise<void> {
 
   await rm(out, { recursive: true, force: true });
   await mkdir(out, { recursive: true });
+
+  // Fingerprint the stylesheet and script so a deploy never serves stale CSS
+  // from a browser or edge cache. The plain names are written too, for links.
+  const fingerprint = async (file: string): Promise<string> => {
+    const body = await readFile(join(ASSETS, file));
+    const hash = createHash("sha256").update(body).digest("hex").slice(0, 10);
+    const [stem, ext] = [file.replace(/\.[^.]+$/, ""), file.replace(/^.*\./, "")];
+    const hashed = `${stem}.${hash}.${ext}`;
+    await writeFile(join(out, hashed), body);
+    return `/${hashed}`;
+  };
+  assets.css = await fingerprint("style.css");
+  assets.js = await fingerprint("replay.js");
 
   const write = async (rel: string, content: string) => {
     const file = join(out, rel);
