@@ -58,3 +58,38 @@ describe("loadSite", () => {
     await expect(loadSite(dir)).rejects.toThrow(/dave\.md.*id/);
   });
 });
+
+describe("photos", () => {
+  test("photo without credit rejects", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "nobel-photo-"));
+    await cp(OK, dir, { recursive: true });
+    await mkdir(join(dir, "candidates", "img"), { recursive: true });
+    await writeFile(join(dir, "candidates", "img", "alice.jpg"), "x");
+    await writeFile(
+      join(dir, "candidates", "alice.md"),
+      "---\nid: alice\nname: Alice Example\naffiliation: X\ntheme: macro\nphoto: img/alice.jpg\n---\nbody\n",
+    );
+    await expect(loadSite(dir)).rejects.toThrow(/alice\.md.*photo_credit/);
+  });
+  test("photo pointing at a missing file rejects", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "nobel-photo2-"));
+    await cp(OK, dir, { recursive: true });
+    await writeFile(
+      join(dir, "candidates", "alice.md"),
+      "---\nid: alice\nname: Alice Example\naffiliation: X\ntheme: macro\nphoto: img/alice.jpg\nphoto_credit: someone\n---\nbody\n",
+    );
+    await expect(loadSite(dir)).rejects.toThrow(/alice\.md.*photo.*not found/);
+  });
+  test("photo with credit and file loads", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "nobel-photo3-"));
+    await cp(OK, dir, { recursive: true });
+    await mkdir(join(dir, "candidates", "img"), { recursive: true });
+    await writeFile(join(dir, "candidates", "img", "alice.jpg"), "x");
+    await writeFile(
+      join(dir, "candidates", "alice.md"),
+      "---\nid: alice\nname: Alice Example\naffiliation: X\ntheme: macro\nphoto: img/alice.jpg\nphoto_credit: Someone, CC BY 4.0\n---\nbody\n",
+    );
+    const s = await loadSite(dir);
+    expect(s.candidates.find((c) => c.id === "alice")!.photoCredit).toBe("Someone, CC BY 4.0");
+  });
+});

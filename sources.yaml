@@ -17,13 +17,13 @@
   url: https://polymarket.com
   kind: prob
   weight: 3
-  blurb: A prediction market with real money on it. Usually lists a market on the Economics Nobel in the days before the announcement.
+  blurb: A prediction market with real money on it. No 2026 Economics Nobel market as of Sept 20; its Peace and Literature markets open much earlier than economics. Enters the board when it lists one.
 - id: kalshi
   name: Kalshi
-  url: https://kalshi.com
+  url: https://kalshi.com/markets/kxnobelecon/nobel-economics-prize/kxnobelecon-26
   kind: prob
   weight: 3
-  blurb: A regulated US prediction market. Kept separate from Polymarket so the two can disagree in public.
+  blurb: A regulated US prediction market. Its 2026 Economics Nobel market opened July 1 with nine names. We record the price Kalshi displays, the last trade, and fall back to the midpoint of the best yes bid and ask for contracts that have never traded. Bid and ask ride in the note, since the book is thin. Kept separate from Polymarket so the two can disagree in public.
 - id: ladbrokes
   name: Ladbrokes
   url: https://www.ladbrokes.com

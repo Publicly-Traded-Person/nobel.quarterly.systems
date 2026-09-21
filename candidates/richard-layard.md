@@ -4,7 +4,9 @@ name: Richard Layard
 affiliation: London School of Economics
 theme: behavioral
 clarivate_year: 2022
-clarivate_note: "for contributions to the economics of happiness and subjective well-being"
+clarivate_note: for contributions to the economics of happiness and subjective well-being
+photo: img/richard-layard.jpg
+photo_credit: Andy Miah, CC BY 2.0, via Wikimedia Commons
 ---
 **The work.** Layard argued that governments should measure and maximize well-being directly rather than income, then went and did it. His lobbying built Britain's national talking therapies program and got well-being into official statistics.
 

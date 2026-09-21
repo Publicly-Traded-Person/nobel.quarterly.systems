@@ -4,7 +4,9 @@ name: Robert E. Hall
 affiliation: Stanford University / Hoover Institution
 theme: macro
 clarivate_year: 2017
-clarivate_note: "for his analysis of worker productivity and studies of recessions and unemployment"
+clarivate_note: for his analysis of worker productivity and studies of recessions and unemployment
+photo: img/robert-hall.jpg
+photo_credit: Bellhorn89, CC0, via Wikimedia Commons
 ---
 **The work.** The random-walk theory of consumption, models of labor market flows in recessions, and long service chairing the NBER committee that dates American business cycles.
 

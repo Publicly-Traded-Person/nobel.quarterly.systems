@@ -4,7 +4,9 @@ name: Mark Gertler
 affiliation: New York University
 theme: monetary
 clarivate_year: 2009
-clarivate_note: "for their research on monetary policy"
+clarivate_note: for their research on monetary policy
+photo: img/mark-gertler.jpg
+photo_credit: Xuthoria, CC BY-SA 4.0, via Wikimedia Commons
 ---
 **The work.** The financial accelerator with Bernanke and Gilchrist, which shows how balance-sheet damage amplifies a downturn, and the Clarida, Galí, and Gertler monetary policy framework.
 

@@ -83,13 +83,25 @@ function movementHtml(m: Standing["movement"]): string {
   return `<span class="mv mv-flat">–</span>`;
 }
 
+export function initials(name: string): string {
+  const parts = name.replace(/[,.]/g, "").trim().split(/\s+/).filter((p) => !/^[A-Z]$/.test(p));
+  const first = parts[0]?.[0] ?? "";
+  const last = parts.length > 1 ? parts[parts.length - 1]![0] ?? "" : "";
+  return (first + last).toUpperCase();
+}
+
+export function face(c: Candidate, size: "s" | "l" = "s"): string {
+  if (c.photo) return `<img class="face face-${size}" src="/${esc(c.photo)}" alt="" loading="lazy" width="${size === "l" ? 160 : 40}" height="${size === "l" ? 160 : 40}">`;
+  return `<span class="face face-${size} face-initials" aria-hidden="true">${esc(initials(c.name))}</span>`;
+}
+
 const TIER_ORDER = ["Lock", "Contender", "Darkhorse", "Field"] as const;
 
 const TIER_BLURB: Record<(typeof TIER_ORDER)[number], string> = {
   Lock: "Highly cited, long overdue, every signal agrees.",
   Contender: "Strong work, right age, right timing.",
   Darkhorse: "Respected, lower probability, could surprise.",
-  Field: "On our radar. No live source has them yet.",
+  Field: "On our radar. The live sources are not pricing them.",
 };
 
 export function rankingsTable(site: Site, snap: Snapshot, opts: { links?: boolean } = {}): string {
@@ -106,9 +118,9 @@ export function rankingsTable(site: Site, snap: Snapshot, opts: { links?: boolea
     const rows = groups.get(tier);
     if (!rows || rows.length === 0) continue;
     out += `<section class="tier tier-${tier.toLowerCase()}">
-<h3 class="tier-name">${tier}s <small>${esc(TIER_BLURB[tier])}</small></h3>
+<h3 class="tier-name">${tier === "Field" ? "The Field" : `${tier}s`} <small>${esc(TIER_BLURB[tier])}</small></h3>
 <table class="standings">
-<thead><tr><th class="c-rank">#</th><th class="c-mv"></th><th class="c-name">Candidate</th><th class="c-theme">Field</th><th class="c-src">Sources</th><th class="c-score">Score</th></tr></thead>
+<thead><tr><th class="c-rank">#</th><th class="c-mv"></th><th class="c-face"></th><th class="c-name">Candidate</th><th class="c-theme">Field</th><th class="c-src">Sources</th><th class="c-score">Score</th></tr></thead>
 <tbody>`;
     for (const s of rows) {
       const c = cand.get(s.id);
@@ -119,6 +131,7 @@ export function rankingsTable(site: Site, snap: Snapshot, opts: { links?: boolea
       out += `<tr data-id="${esc(s.id)}">
 <td class="c-rank">${s.rank}</td>
 <td class="c-mv">${movementHtml(s.movement)}</td>
+<td class="c-face">${face(c)}</td>
 <td class="c-name">${name}${s.sleeper ? ' <span class="badge badge-sleeper" title="A KmikeyM desk call the market has not caught up to">Sleeper</span>' : ""}<div class="aff">${esc(c.affiliation)}</div></td>
 <td class="c-theme">${esc(site.config.themes[c.theme] ?? c.theme)}</td>
 <td class="c-src">${s.sourcesNaming}</td>
@@ -238,8 +251,8 @@ export function renderCandidate(site: Site, timeline: Timeline, c: Candidate): s
     .join(", ");
   const body = `<article class="candidate">
 <p class="crumb"><a href="/">Rankings</a> / Candidate</p>
-<h1>${esc(c.name)}</h1>
-<p class="lede">${esc(c.affiliation)} · ${esc(site.config.themes[c.theme] ?? c.theme)}</p>
+<div class="cand-head">${face(c, "l")}<div><h1>${esc(c.name)}</h1>
+<p class="lede">${esc(c.affiliation)} · ${esc(site.config.themes[c.theme] ?? c.theme)}</p>${c.photoCredit ? `<p class="credit">Photo: ${esc(c.photoCredit)}</p>` : ""}</div></div>
 ${
   standing
     ? `<p class="standing-line">Currently <strong>#${standing.rank}</strong>, tier <strong>${standing.tier}</strong>, score <strong>${standing.composite.toFixed(1)}</strong>, named by ${standing.sourcesNaming} source${standing.sourcesNaming === 1 ? "" : "s"}.${standing.sleeper ? " KmikeyM desk sleeper." : ""}<span class="spark" title="Score after each update">Score history: ${esc(spark)}</span></p>`

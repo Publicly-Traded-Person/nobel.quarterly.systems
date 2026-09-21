@@ -88,3 +88,18 @@ describe("render", () => {
     expect(html).toContain("&lt;script&gt;");
   });
 });
+
+describe("faces", () => {
+  test("initials drop middle initials", async () => {
+    const { initials } = await import("../src/render");
+    expect(initials("Susan C. Athey")).toBe("SA");
+    expect(initials("W. Brian Arthur")).toBe("BA");
+    expect(initials("Piketty")).toBe("P");
+  });
+  test("a candidate without a photo renders an initials tile, with a photo renders an img", async () => {
+    const { face } = await import("../src/render");
+    const c = site.candidates[0]!;
+    expect(face(c)).toContain("face-initials");
+    expect(face({ ...c, photo: "img/alice.jpg", photoCredit: "x" })).toContain('src="/img/alice.jpg"');
+  });
+});

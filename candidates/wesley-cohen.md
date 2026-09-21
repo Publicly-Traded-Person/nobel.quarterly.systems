@@ -4,7 +4,9 @@ name: Wesley M. Cohen
 affiliation: Duke University, Fuqua School of Business
 theme: innovation
 clarivate_year: 2018
-clarivate_note: "for the introduction and development of the concept of absorptive capacity"
+clarivate_note: for the introduction and development of the concept of absorptive capacity
+photo: img/wesley-cohen.jpg
+photo_credit: SCOTT DAVIS, Public domain, via Wikimedia Commons
 ---
 **The work.** Absorptive capacity, written with Levinthal in 1990: a firm's own research spending is what lets it recognize and use knowledge from outside.
 

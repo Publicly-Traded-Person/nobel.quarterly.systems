@@ -4,7 +4,9 @@ name: Elhanan Helpman
 affiliation: Harvard University
 theme: trade
 clarivate_year: 2007
-clarivate_note: "for contributions on international trade, particularly on the relationship between economic growth and trade"
+clarivate_note: for contributions on international trade, particularly on the relationship between economic growth and trade
+photo: img/elhanan-helpman.jpg
+photo_credit: Elhanan Helpman, CC BY 3.0, via Wikimedia Commons
 ---
 **The work.** With Grossman, the modern theory of trade under increasing returns, innovation-driven endogenous growth, and the political economy of protection in "Protection for Sale."
 

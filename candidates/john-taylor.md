@@ -4,7 +4,9 @@ name: John B. Taylor
 affiliation: Stanford University (Hoover Institution)
 theme: monetary
 clarivate_year: 2009
-clarivate_note: "for their research on monetary policy"
+clarivate_note: for their research on monetary policy
+photo: img/john-taylor.jpg
+photo_credit: Wikimedia Commons, Public domain, via Wikimedia Commons
 ---
 **The work.** The Taylor rule, the formula tying the policy interest rate to inflation and the output gap, plus staggered wage contracts that gave sticky-price macro its nominal rigidity.
 

@@ -4,7 +4,9 @@ name: Raj Chetty
 affiliation: Harvard University
 theme: public
 clarivate_year: 2023
-clarivate_note: "for understanding the determinants of economic opportunity and identifying policies to increase social mobility"
+clarivate_note: for understanding the determinants of economic opportunity and identifying policies to increase social mobility
+photo: img/raj-chetty.jpg
+photo_credit: Wissenschaftszentrum Berlin, CC BY 3.0, via Wikimedia Commons
 ---
 **The work.** Uses tax records and administrative data at scale to measure economic mobility down to the neighborhood, then tests which policies move it. The Opportunity Atlas and the Moving to Opportunity reanalysis are the headline results.
 

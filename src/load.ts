@@ -1,5 +1,5 @@
 // Read and validate the content tree into one Site object.
-import { readdir, readFile } from "node:fs/promises";
+import { readdir, readFile, stat } from "node:fs/promises";
 import { join, basename } from "node:path";
 import { parse as parseYaml } from "yaml";
 import { marked } from "marked";
@@ -128,13 +128,23 @@ async function loadCandidates(root: string, config: SiteConfig): Promise<Candida
     const theme = str(file, front, "theme");
     if (!(theme in config.themes))
       throw new LoadError(file, "theme", `unknown theme ${theme}`);
-    out.push({
+    const c: Candidate = {
       id,
       name: str(file, front, "name"),
       affiliation: str(file, front, "affiliation"),
       theme,
       bodyHtml: render(body),
-    });
+    };
+    if (front.photo !== undefined) {
+      const photo = str(file, front, "photo");
+      if (!/^img\/[a-z0-9-]+\.(jpg|jpeg|png|webp)$/.test(photo))
+        throw new LoadError(file, "photo", "must look like img/<id>.jpg");
+      const exists = await stat(join(dir, photo)).then(() => true, () => false);
+      if (!exists) throw new LoadError(file, "photo", `file not found: ${photo}`);
+      c.photo = photo;
+      c.photoCredit = str(file, front, "photo_credit");
+    }
+    out.push(c);
   }
   return out;
 }

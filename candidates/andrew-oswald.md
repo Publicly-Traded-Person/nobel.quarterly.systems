@@ -4,7 +4,9 @@ name: Andrew J. Oswald
 affiliation: University of Warwick
 theme: behavioral
 clarivate_year: 2022
-clarivate_note: "for contributions to the economics of happiness and subjective well-being"
+clarivate_note: for contributions to the economics of happiness and subjective well-being
+photo: img/andrew-oswald.jpg
+photo_credit: Bengt Oberger, CC BY-SA 4.0, via Wikimedia Commons
 ---
 **The work.** With David Blanchflower he documented the U-shaped curve of happiness over life, bottoming out in the late forties, and priced unemployment, marriage and commuting in happiness terms.
 

@@ -4,7 +4,9 @@ name: W. Brian Arthur
 affiliation: Santa Fe Institute
 theme: innovation
 clarivate_year: 2019
-clarivate_note: "for research exploring the consequences of increasing returns (or network effects)"
+clarivate_note: for research exploring the consequences of increasing returns (or network effects)
+photo: img/brian-arthur.jpg
+photo_credit: World Economic Forum, CC BY-SA 2.0, via Wikimedia Commons
 ---
 **The work.** Increasing returns and lock-in: why an inferior technology can win a market and keep it once enough users pile on, plus the complexity economics program at Santa Fe.
 

@@ -4,7 +4,9 @@ name: David J. Teece
 affiliation: UC Berkeley
 theme: innovation
 clarivate_year: 2021
-clarivate_note: "for pioneering research on entrepreneurship, innovation, and competition."
+clarivate_note: for pioneering research on entrepreneurship, innovation, and competition.
+photo: img/david-teece.jpg
+photo_credit: PanKirkham, CC BY-SA 4.0, via Wikimedia Commons
 ---
 **The work.** Two ideas every MBA learns. Profiting from Innovation (1986) explains why inventors lose to imitators who own the complementary assets. Dynamic capabilities explains why some firms keep reinventing themselves and most do not.
 

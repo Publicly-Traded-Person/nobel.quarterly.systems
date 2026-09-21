@@ -4,7 +4,9 @@ name: Ariel Rubinstein
 affiliation: Tel Aviv University / New York University
 theme: theory
 clarivate_year: 2019
-clarivate_note: "for development of formal theoretical economic models and especially models of bounded rationality"
+clarivate_note: for development of formal theoretical economic models and especially models of bounded rationality
+photo: img/ariel-rubinstein.jpg
+photo_credit: . The original uploader was Danny-w at Hebrew Wikipedia., Attribution, via Wikimedia Commons
 ---
 **The work.** The alternating-offers bargaining model of 1982, models of bounded rationality, and a long public argument that economic theory is a set of fables, not a forecasting machine.
 

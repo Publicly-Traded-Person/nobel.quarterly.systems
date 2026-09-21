@@ -4,7 +4,9 @@ name: John A. List
 affiliation: University of Chicago
 theme: behavioral
 clarivate_year: 2015
-clarivate_note: "for advancing field experiments in economics"
+clarivate_note: for advancing field experiments in economics
+photo: img/john-list.jpg
+photo_credit: Xuthoria, CC BY-SA 4.0, via Wikimedia Commons
 ---
 **The work.** He took economics out of the lab and into flea markets, charities, and schools, turning field experiments into a mainstream method.
 

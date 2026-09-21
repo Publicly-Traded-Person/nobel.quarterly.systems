@@ -4,7 +4,9 @@ name: Anne Osborn Krueger
 affiliation: Johns Hopkins University
 theme: political
 clarivate_year: 2011
-clarivate_note: "for their description of rent-seeking behavior and its implications"
+clarivate_note: for their description of rent-seeking behavior and its implications
+photo: img/anne-krueger.jpg
+photo_credit: International Monetary Fund, Public domain, via Wikimedia Commons
 ---
 **The work.** Krueger coined the term rent-seeking in 1974, measuring what economies lose when firms burn real resources chasing import licenses and government favors. She later ran the numbers at the top, as World Bank chief economist and IMF first deputy managing director.
 

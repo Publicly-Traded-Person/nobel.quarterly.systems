@@ -35,6 +35,13 @@
           ? '<span class="mv mv-down">▼' + -m + "</span>"
           : '<span class="mv mv-flat">–</span>';
 
+  function initials(name) {
+    const parts = name.replace(/[,.]/g, "").trim().split(/\s+/).filter((p) => !/^[A-Z]$/.test(p));
+    const first = parts[0] ? parts[0][0] : "";
+    const last = parts.length > 1 ? parts[parts.length - 1][0] : "";
+    return (first + last).toUpperCase();
+  }
+
   function fmtDate(iso) {
     const [y, m, d] = iso.split("-").map(Number);
     return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m - 1] + " " + d + ", " + y;
@@ -46,6 +53,7 @@
       '<tr data-id="' + esc(s.id) + '">' +
       '<td class="c-rank">' + s.rank + "</td>" +
       '<td class="c-mv">' + mv(s.movement) + "</td>" +
+      '<td class="c-face">' + (c.photo ? '<img class="face face-s" src="/' + esc(c.photo) + '" alt="" width="40" height="40">' : '<span class="face face-s face-initials" aria-hidden="true">' + esc(initials(c.name)) + "</span>") + "</td>" +
       '<td class="c-name"><a href="/candidates/' + esc(s.id) + '/">' + esc(c.name) + "</a>" +
       (s.sleeper ? ' <span class="badge badge-sleeper">Sleeper</span>' : "") +
       '<div class="aff">' + esc(c.affiliation) + "</div></td>" +
@@ -64,8 +72,8 @@
       const rows = groups[t];
       if (!rows || !rows.length) return;
       html +=
-        '<section class="tier tier-' + t.toLowerCase() + '"><h3 class="tier-name">' + t + "s</h3>" +
-        '<table class="standings"><thead><tr><th class="c-rank">#</th><th class="c-mv"></th><th class="c-name">Candidate</th><th class="c-theme">Field</th><th class="c-src">Sources</th><th class="c-score">Score</th></tr></thead><tbody>' +
+        '<section class="tier tier-' + t.toLowerCase() + '"><h3 class="tier-name">' + (t === "Field" ? "The Field" : t + "s") + "</h3>" +
+        '<table class="standings"><thead><tr><th class="c-rank">#</th><th class="c-mv"></th><th class="c-face"></th><th class="c-name">Candidate</th><th class="c-theme">Field</th><th class="c-src">Sources</th><th class="c-score">Score</th></tr></thead><tbody>' +
         rows.map(rowHtml).join("") +
         "</tbody></table></section>";
     });

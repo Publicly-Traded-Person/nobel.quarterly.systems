@@ -4,7 +4,9 @@ name: Nobuhiro Kiyotaki
 affiliation: Princeton University
 theme: macro
 clarivate_year: 2010
-clarivate_note: "for formulation of the Kiyotaki-Moore model, which describes how small shocks to an economy can lead to large output fluctuations"
+clarivate_note: for formulation of the Kiyotaki-Moore model, which describes how small shocks to an economy can lead to large output fluctuations
+photo: img/nobuhiro-kiyotaki.jpg
+photo_credit: 大臣官房人事課, CC BY 4.0, via Wikimedia Commons
 ---
 **The work.** The Kiyotaki-Moore model showed how credit limits tied to collateral turn a small shock into a long slump: asset prices fall, borrowing shrinks, investment drops, and prices fall again. With Randall Wright he also modeled why money exists at all.
 

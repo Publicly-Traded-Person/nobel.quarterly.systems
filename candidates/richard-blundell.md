@@ -4,7 +4,9 @@ name: Richard Blundell
 affiliation: University College London / Institute for Fiscal Studies
 theme: labor
 clarivate_year: 2015
-clarivate_note: "for microeconometric research on labor markets and consumer behavior"
+clarivate_note: for microeconometric research on labor markets and consumer behavior
+photo: img/richard-blundell.jpg
+photo_credit: Richardblundell, CC BY-SA 3.0, via Wikimedia Commons
 ---
 **The work.** Labor supply, consumer demand, and the microeconometrics of household behavior, much of it built on British survey data at the Institute for Fiscal Studies.
 

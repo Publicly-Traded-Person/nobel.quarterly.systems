@@ -4,7 +4,9 @@ name: Lawrence F. Katz
 affiliation: Harvard University
 theme: labor
 clarivate_year: 2025
-clarivate_note: "for seminal analysis of wage structure, earnings inequality, educational advance, and technological change"
+clarivate_note: for seminal analysis of wage structure, earnings inequality, educational advance, and technological change
+photo: img/lawrence-katz.jpg
+photo_credit: Xuthoria, CC BY-SA 4.0, via Wikimedia Commons
 ---
 **The work.** The race between education and technology, the Katz-Murphy model of wage inequality, and the long-run Moving to Opportunity study. He has also edited the Quarterly Journal of Economics for decades.
 

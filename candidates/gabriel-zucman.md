@@ -4,7 +4,9 @@ name: Gabriel Zucman
 affiliation: Paris School of Economics / UC Berkeley
 theme: inequality
 clarivate_year: 2023
-clarivate_note: "for research on income and wealth inequality and its consequences"
+clarivate_note: for research on income and wealth inequality and its consequences
+photo: img/gabriel-zucman.jpg
+photo_credit: librairie mollat (youtube), CC BY 3.0, via Wikimedia Commons
 ---
 **The work.** Following hidden wealth through offshore tax havens, estimating how much the rich shelter, and building the distributional national accounts that show who gets what share of growth. Clark Medal, 2023.
 

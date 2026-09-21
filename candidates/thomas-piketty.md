@@ -4,7 +4,9 @@ name: Thomas Piketty
 affiliation: Paris School of Economics
 theme: inequality
 clarivate_year: 2023
-clarivate_note: "for research on income and wealth inequality and its consequences"
+clarivate_note: for research on income and wealth inequality and its consequences
+photo: img/thomas-piketty.jpg
+photo_credit: Gobierno de Chile, CC BY 2.0, via Wikimedia Commons
 ---
 **The work.** Centuries of wealth and income inequality reconstructed from tax data, the claim that returns on capital outrun growth, and Capital in the Twenty-First Century, an economics book that sold like a novel.
 

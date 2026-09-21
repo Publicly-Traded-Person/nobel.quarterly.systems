@@ -101,6 +101,23 @@ time { color: var(--muted); font-size: 0.9rem; font-variant-numeric: tabular-num
   body { font-size: 16px; }
 }
 
+/* Faces */
+.c-face { width: 48px; padding-right: 0 !important; }
+.face { display: inline-block; border-radius: 50%; object-fit: cover; background: var(--rule); vertical-align: middle; }
+.face-s { width: 40px; height: 40px; }
+.face-l { width: 160px; height: 160px; flex: 0 0 160px; }
+.face-initials { color: var(--muted); font-weight: 700; text-align: center; letter-spacing: 0.02em; }
+.face-s.face-initials { line-height: 40px; font-size: 0.85rem; }
+.face-l.face-initials { line-height: 160px; font-size: 3rem; }
+.cand-head { display: flex; gap: 20px; align-items: flex-start; margin: 4px 0 16px; }
+.cand-head h1 { margin-top: 0; }
+.credit { font-size: 0.78rem; color: var(--muted); margin: 4px 0 0; }
+@media (max-width: 560px) {
+  .cand-head { gap: 14px; }
+  .face-l { width: 96px; height: 96px; flex-basis: 96px; }
+  .face-l.face-initials { line-height: 96px; font-size: 2rem; }
+}
+
 /* Updates feed */
 .feed h2 { border-bottom: 1px solid var(--rule); padding-bottom: 6px; }
 .update-card { padding: 14px 0; border-bottom: 1px solid var(--rule); }

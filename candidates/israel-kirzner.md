@@ -4,7 +4,9 @@ name: Israel M. Kirzner
 affiliation: New York University
 theme: theory
 clarivate_year: 2014
-clarivate_note: "for their advancement of the study of entrepreneurism"
+clarivate_note: for their advancement of the study of entrepreneurism
+photo: img/israel-kirzner.jpg
+photo_credit: Mises Institute, CC BY-SA 3.0, via Wikimedia Commons
 ---
 **The work.** Kirzner's Competition and Entrepreneurship, from 1973, put the entrepreneur at the center of how markets work: not a risk-bearer or a manager but someone alert to a profit opportunity nobody else has noticed.
 

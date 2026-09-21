@@ -4,7 +4,9 @@ name: David Autor
 affiliation: MIT
 theme: labor
 clarivate_year: 2025
-clarivate_note: "for seminal analysis of wage structure, earnings inequality, educational advance, and technological change"
+clarivate_note: for seminal analysis of wage structure, earnings inequality, educational advance, and technological change
+photo: img/david-autor.jpg
+photo_credit: MysteriousTrousers, CC BY 4.0, via Wikimedia Commons
 ---
 **The work.** The China Shock, which measured what import competition did to American manufacturing towns, and the polarization of the labor market as routine jobs got automated away.
 

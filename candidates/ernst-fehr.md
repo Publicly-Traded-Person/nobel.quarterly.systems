@@ -4,7 +4,9 @@ name: Ernst Fehr
 affiliation: University of Zurich
 theme: behavioral
 clarivate_year: 2009
-clarivate_note: "for their contributions to behavioral economics, including issues of preferences, fairness, and cooperation"
+clarivate_note: for their contributions to behavioral economics, including issues of preferences, fairness, and cooperation
+photo: img/ernst-fehr.jpg
+photo_credit: Neuroeconomics University of Zurich, CC BY 4.0, via Wikimedia Commons
 ---
 **The work.** Experimental evidence that people punish unfairness at their own expense, the Fehr-Schmidt model of inequity aversion, and the economics of reciprocity and social norms.
 

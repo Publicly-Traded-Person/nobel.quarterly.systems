@@ -4,7 +4,9 @@ name: Sendhil Mullainathan
 affiliation: MIT
 theme: behavioral
 clarivate_year: 2025
-clarivate_note: "for joint research on racial discrimination, corporate governance, and other aspects of labor economics"
+clarivate_note: for joint research on racial discrimination, corporate governance, and other aspects of labor economics
+photo: img/sendhil-mullainathan.jpg
+photo_credit: Kaveh Sardari - Center for Global Development (CGD), CC BY 2.0, via Wikimedia Commons
 ---
 **The work.** The behavioral economics of poverty and scarcity, the resume audit study with Bertrand, and more recently machine learning as a tool for economic prediction and for auditing human decisions like bail.
 

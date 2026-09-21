@@ -4,7 +4,9 @@ name: Jordi Galí
 affiliation: CREI, Universitat Pompeu Fabra, Barcelona School of Economics
 theme: monetary
 clarivate_year: 2009
-clarivate_note: "for their research on monetary policy"
+clarivate_note: for their research on monetary policy
+photo: img/jordi-gali.jpg
+photo_credit: European Central Bank, CC BY 3.0, via Wikimedia Commons
 ---
 **The work.** The New Keynesian model in its modern form: the New Keynesian Phillips curve with Gertler, the textbook central bank economists learned from, and the finding that technology shocks lower hours worked.
 

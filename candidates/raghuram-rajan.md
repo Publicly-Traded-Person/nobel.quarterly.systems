@@ -4,7 +4,9 @@ name: Raghuram Rajan
 affiliation: University of Chicago Booth School of Business
 theme: finance
 clarivate_year: 2017
-clarivate_note: "for their contributions illuminating the dimensions of decisions in corporate finance"
+clarivate_note: for their contributions illuminating the dimensions of decisions in corporate finance
+photo: img/raghuram-rajan.jpg
+photo_credit: International Monetary Fund, Public domain, via Wikimedia Commons
 ---
 **The work.** Banking and corporate finance theory with Diamond and Zingales, the 2005 Jackson Hole warning that finance was making the world riskier, and the book Fault Lines on the 2008 crisis.
 

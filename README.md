@@ -50,6 +50,10 @@ Then `bun run build` to check it, commit, and push to `main`. That is the whole 
 
 Create `candidates/<firstname-lastname>.md` with the frontmatter above and four short paragraphs: the work, the case for, the case against, the KmikeyM angle. They appear in the Field tier until a source names them.
 
+## Photos
+
+`bun run scripts/fetch-photos.ts` pulls a freely licensed portrait from Wikipedia/Wikimedia Commons for every candidate that has none, resizes it to 320px, saves it under `candidates/img/<id>.jpg`, and writes `photo` and `photo_credit` into the frontmatter. Only CC, public-domain, and "copyrighted free use" images are kept. Candidates with no usable image render as an initials tile; find one by hand, drop it in `candidates/img/`, and add both fields. A `photo` without a `photo_credit` fails the build.
+
 ## Adding a source
 
 Add an entry to `sources.yaml` with an `id`, `name`, `url`, `kind`, `weight`, and `blurb`. Then post an update carrying its first observations. A source added mid-season affects scores from that update forward and leaves the earlier replay untouched.

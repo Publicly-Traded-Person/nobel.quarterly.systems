@@ -4,7 +4,9 @@ name: Edward Glaeser
 affiliation: Harvard University
 theme: growth
 clarivate_year: 2023
-clarivate_note: "for penetrating analysis and insights on urban economics and the city as an engine of growth"
+clarivate_note: for penetrating analysis and insights on urban economics and the city as an engine of growth
+photo: img/edward-glaeser.jpg
+photo_credit: Xuthoria, CC BY-SA 4.0, via Wikimedia Commons
 ---
 **The work.** Cities as engines of growth: why people cluster, why housing regulation chokes the most productive cities, and why density beats sprawl. Triumph of the City is the popular version.
 

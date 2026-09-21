@@ -4,7 +4,9 @@ name: Jagdish Bhagwati
 affiliation: Columbia University
 theme: trade
 clarivate_year: 2006
-clarivate_note: "for their significant contributions to international trade theory and economic development"
+clarivate_note: for their significant contributions to international trade theory and economic development
+photo: img/jagdish-bhagwati.jpg
+photo_credit: Johannes Jansson, CC BY 2.5 dk, via Wikimedia Commons
 ---
 **The work.** Trade theory and trade policy: immiserizing growth, directly unproductive profit-seeking, and decades of arguing for free trade against both protectionists and preferential deals.
 

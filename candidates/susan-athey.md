@@ -3,6 +3,8 @@ id: susan-athey
 name: Susan C. Athey
 affiliation: Stanford Graduate School of Business
 theme: market-design
+photo: img/susan-athey.jpg
+photo_credit: Christopher Michel, CC BY-SA 4.0, via Wikimedia Commons
 ---
 **The work.** Athey is the economist who took auction theory and mechanism design into the machine age. Her early work on comparative statics and auctions was pure theory; then she spent years as Microsoft's chief economist and came back writing about how platforms should price, match, and learn. Along the way she became one of the leading voices on using machine learning inside causal inference, so that a policy evaluation and a recommendation engine can be built with the same tools.
 

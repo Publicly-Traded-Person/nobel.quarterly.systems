@@ -1,5 +1,5 @@
 // Wire load → score → render and write dist/.
-import { cp, mkdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, rm, stat, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { loadSite } from "./load";
 import { computeTimeline } from "./score";
@@ -39,7 +39,7 @@ export async function build(root: string, out: string): Promise<void> {
     await write(`candidates/${c.id}/index.html`, renderCandidate(site, timeline, c));
 
   const candidates = Object.fromEntries(
-    site.candidates.map((c) => [c.id, { name: c.name, affiliation: c.affiliation, theme: c.theme }]),
+    site.candidates.map((c) => [c.id, { name: c.name, affiliation: c.affiliation, theme: c.theme, photo: c.photo ?? null }]),
   );
   await write(
     "timeline.json",
@@ -47,6 +47,8 @@ export async function build(root: string, out: string): Promise<void> {
   );
 
   await cp(ASSETS, out, { recursive: true });
+  const imgDir = join(root, "candidates", "img");
+  if (await stat(imgDir).then(() => true, () => false)) await cp(imgDir, join(out, "img"), { recursive: true });
   console.log(
     `wrote ${out}: ${site.candidates.length} candidates, ${site.updates.length} updates, ${timeline.length} snapshots`,
   );

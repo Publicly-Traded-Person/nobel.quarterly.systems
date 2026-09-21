@@ -4,7 +4,9 @@ name: George Loewenstein
 affiliation: Carnegie Mellon University
 theme: behavioral
 clarivate_year: 2017
-clarivate_note: "for pioneering research in behavioral economics and in neuroeconomics"
+clarivate_note: for pioneering research in behavioral economics and in neuroeconomics
+photo: img/george-loewenstein.jpg
+photo_credit: MeJudice, CC BY 3.0, via Wikimedia Commons
 ---
 **The work.** Intertemporal choice, the hot-cold empathy gap, projection bias, and building behavioral economics into a research program at Carnegie Mellon.
 

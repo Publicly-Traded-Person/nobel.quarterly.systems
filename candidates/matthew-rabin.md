@@ -4,7 +4,9 @@ name: Matthew Rabin
 affiliation: Harvard University
 theme: behavioral
 clarivate_year: 2009
-clarivate_note: "for their contributions to behavioral economics, including issues of preferences, fairness, and cooperation"
+clarivate_note: for their contributions to behavioral economics, including issues of preferences, fairness, and cooperation
+photo: img/matthew-rabin.jpg
+photo_credit: Faizul Latif Chowdhury (talk), Public domain, via Wikimedia Commons
 ---
 **The work.** Formal models of psychology in economics: fairness as intentions, the calibration theorem on risk aversion, present-biased procrastination with O'Donoghue, and projection bias.
 

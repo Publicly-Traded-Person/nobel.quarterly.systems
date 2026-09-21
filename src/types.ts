@@ -14,6 +14,8 @@ export type Candidate = {
   name: string;
   affiliation: string;
   theme: string;
+  photo?: string;
+  photoCredit?: string;
   bodyHtml: string;
 };
 

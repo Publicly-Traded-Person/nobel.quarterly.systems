@@ -3,6 +3,8 @@ id: hal-varian
 name: Hal R. Varian
 affiliation: University of California, Berkeley (emeritus); formerly Chief Economist, Google
 theme: market-design
+photo: img/hal-varian.jpg
+photo_credit: Xuthoria, CC BY-SA 4.0, via Wikimedia Commons
 ---
 **The work.** Varian wrote the microeconomics textbook a generation learned from, then wrote the book on information goods with Carl Shapiro, then went to Google in 2002 and designed the economics of the ad auction that funds the modern internet. Versioning, bundling, lock-in, network effects, and the pricing of things that cost nothing to copy: he made those the standard vocabulary before anyone else had the data to check.
 

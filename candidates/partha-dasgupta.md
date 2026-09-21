@@ -4,7 +4,9 @@ name: Partha Dasgupta
 affiliation: University of Cambridge
 theme: environment
 clarivate_year: 2024
-clarivate_note: "for integrating nature and its resources in the human economy"
+clarivate_note: for integrating nature and its resources in the human economy
+photo: img/partha-dasgupta.jpg
+photo_credit: Niccolò Caranti, CC BY-SA 3.0, via Wikimedia Commons
 ---
 **The work.** Putting nature on the balance sheet: natural capital as wealth that depreciates, the economics of biodiversity, and the 2021 Dasgupta Review commissioned by the UK Treasury.
 

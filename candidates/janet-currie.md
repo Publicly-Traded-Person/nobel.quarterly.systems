@@ -4,7 +4,9 @@ name: Janet Currie
 affiliation: Princeton University
 theme: public
 clarivate_year: 2024
-clarivate_note: "for pioneering economic analysis of child development"
+clarivate_note: for pioneering economic analysis of child development
+photo: img/janet-currie.jpg
+photo_credit: Xuthoria, CC BY-SA 4.0, via Wikimedia Commons
 ---
 **The work.** How early childhood conditions, from pollution exposure to Medicaid coverage to prenatal health, shape a child's later life, measured with administrative data at scale.
 

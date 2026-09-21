@@ -4,7 +4,9 @@ name: Richard Posner
 affiliation: University of Chicago Law School
 theme: io
 clarivate_year: 2013
-clarivate_note: "for extending economic theories of regulation"
+clarivate_note: for extending economic theories of regulation
+photo: img/richard-posner.jpg
+photo_credit: chensiyuan, CC BY-SA 4.0, via Wikimedia Commons
 ---
 **The work.** Posner's Economic Analysis of Law, from 1973, turned law and economics from a Chicago seminar into a field, arguing common law rules tend toward efficiency. He then applied it from the bench, on the Seventh Circuit from 1981 to 2017.
 

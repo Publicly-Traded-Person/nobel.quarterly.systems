@@ -4,7 +4,9 @@ name: Carmen M. Reinhart
 affiliation: Harvard Kennedy School
 theme: macro
 clarivate_year: 2021
-clarivate_note: "for contributions to international macroeconomics and insights on global debt and financial crises."
+clarivate_note: for contributions to international macroeconomics and insights on global debt and financial crises.
+photo: img/carmen-reinhart.jpg
+photo_credit: World Economic Forum from Cologny, Switzerland, CC BY-SA 2.0, via Wikimedia Commons
 ---
 **The work.** Eight centuries of crises, catalogued. This Time Is Different (2009), with Rogoff, showed that debt crises follow the same script across countries and eras, and nobody believes it until it happens to them.
 

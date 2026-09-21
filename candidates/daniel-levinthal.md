@@ -4,7 +4,9 @@ name: Daniel A. Levinthal
 affiliation: University of Pennsylvania, Wharton School
 theme: innovation
 clarivate_year: 2018
-clarivate_note: "for the introduction and development of the concept of absorptive capacity"
+clarivate_note: for the introduction and development of the concept of absorptive capacity
+photo: img/daniel-levinthal.jpg
+photo_credit: MeJudice, CC BY 3.0, via Wikimedia Commons
 ---
 **The work.** Absorptive capacity with Cohen, plus the rugged-landscape model of how organizations adapt and work with James March on the myopia of learning.
 

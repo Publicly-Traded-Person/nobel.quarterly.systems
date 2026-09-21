@@ -4,7 +4,9 @@ name: Avinash K. Dixit
 affiliation: Princeton University
 theme: trade
 clarivate_year: 2006
-clarivate_note: "for their significant contributions to international trade theory and economic development"
+clarivate_note: for their significant contributions to international trade theory and economic development
+photo: img/avinash-dixit.jpg
+photo_credit: Steven Waskow, copyright transferred to Avinash Dixit via a written statement, Copyrighted free use, via Wikimedia Commons
 ---
 **The work.** The Dixit-Stiglitz model of monopolistic competition, the foundation of new trade theory and new growth theory, plus the investment-under-uncertainty framework with Pindyck.
 

@@ -4,7 +4,9 @@ name: Nicholas Bloom
 affiliation: Stanford University
 theme: macro
 clarivate_year: 2025
-clarivate_note: "for analyzing the impact of economic and political uncertainty on investment, employment and growth"
+clarivate_note: for analyzing the impact of economic and political uncertainty on investment, employment and growth
+photo: img/nicholas-bloom.jpg
+photo_credit: Xuthoria, CC BY-SA 4.0, via Wikimedia Commons
 ---
 **The work.** Measuring uncertainty and its effect on investment and hiring, the Economic Policy Uncertainty index, management practices as a driver of productivity, and the definitive research on working from home.
 

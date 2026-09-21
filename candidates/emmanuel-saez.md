@@ -4,7 +4,9 @@ name: Emmanuel Saez
 affiliation: UC Berkeley
 theme: inequality
 clarivate_year: 2023
-clarivate_note: "for research on income and wealth inequality and its consequences"
+clarivate_note: for research on income and wealth inequality and its consequences
+photo: img/emmanuel-saez.jpg
+photo_credit: Cayce Clifford, Copyrighted free use, via Wikimedia Commons
 ---
 **The work.** Top income shares from tax records, optimal tax theory, and the modern accounting of who actually pays taxes in the United States. Clark Medal, 2009.
 

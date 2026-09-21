@@ -4,7 +4,9 @@ name: Olivier Blanchard
 affiliation: Peterson Institute for International Economics / MIT
 theme: macro
 clarivate_year: 2016
-clarivate_note: "for contributions to macroeconomics, including determinants of economic fluctuations and employment"
+clarivate_note: for contributions to macroeconomics, including determinants of economic fluctuations and employment
+photo: img/olivier-blanchard.jpg
+photo_credit: IMF Staff Photographer Eugene Salazar, Public domain, via Wikimedia Commons
 ---
 **The work.** Forty years of mainstream macro: fluctuations, hysteresis in European unemployment, the intermediate textbook, and a rethink of public debt after his years as IMF chief economist.
 
