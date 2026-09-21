@@ -35,6 +35,19 @@ function tierFor(
 
 const DESK = "kmikeym";
 
+/** Sort key for ties: last name, then the full name. */
+function lastNameKey(name: string): string {
+  const parts = name.replace(/[,.]/g, "").trim().split(/\s+/);
+  return `${parts[parts.length - 1] ?? ""} ${name}`.toLowerCase();
+}
+
+/** Index of the first row in the tie group containing index i, plus one. */
+function rankOfIndex(rows: { composite: number }[], i: number): number {
+  let j = i;
+  while (j > 0 && rows[j - 1]!.composite === rows[i]!.composite) j -= 1;
+  return j + 1;
+}
+
 /**
  * One snapshot per update, in Site.updates order. Each snapshot scores every
  * candidate using the newest observation per (source, candidate) seen so far,
@@ -90,15 +103,16 @@ export function computeTimeline(site: Site): Timeline {
       },
     );
 
-    const nameOf = new Map(site.candidates.map((c) => [c.id, c.name]));
+    const sortKey = new Map(site.candidates.map((c) => [c.id, lastNameKey(c.name)]));
     rows.sort(
       (a, b) =>
         b.composite - a.composite ||
-        (nameOf.get(a.id) ?? "").localeCompare(nameOf.get(b.id) ?? ""),
+        (sortKey.get(a.id) ?? "").localeCompare(sortKey.get(b.id) ?? ""),
     );
 
+    // Standard competition ranking: equal composites share a rank (1, 1, 1, 4).
     const standings: Standing[] = rows.map((r, i) => {
-      const rank = i + 1;
+      const rank = i > 0 && rows[i - 1]!.composite === r.composite ? rankOfIndex(rows, i) : i + 1;
       const prev = previousRank.get(r.id);
       const movement: number | "new" = prev === undefined ? "new" : prev - rank;
       return { ...r, rank, movement };

@@ -1,0 +1,56 @@
+# Every signal the ranking reads. Weights are editorial and public.
+# Adding a source is one entry here plus its observations in an update.
+- id: clarivate
+  name: Clarivate Citation Laureates
+  url: https://clarivate.com/citation-laureates/economics/
+  kind: named
+  weight: 3
+  blurb: The strongest quantitative predictor. Each September Clarivate names a handful of economists whose citation records look Nobel-class. Dozens of past picks have gone on to win, often years later.
+- id: clarivate-alumni
+  name: Clarivate alumni (prior years)
+  url: https://en.wikipedia.org/wiki/List_of_Clarivate_Citation_laureates_in_Economic_Sciences
+  kind: named
+  weight: 1
+  blurb: Everyone Clarivate named in an earlier year who has not won yet. Still a real signal, since most Citation Laureates who win do so years after being named, but a weaker one than this year's list.
+- id: polymarket
+  name: Polymarket
+  url: https://polymarket.com
+  kind: prob
+  weight: 3
+  blurb: A prediction market with real money on it. Usually lists a market on the Economics Nobel in the days before the announcement.
+- id: kalshi
+  name: Kalshi
+  url: https://kalshi.com
+  kind: prob
+  weight: 3
+  blurb: A regulated US prediction market. Kept separate from Polymarket so the two can disagree in public.
+- id: ladbrokes
+  name: Ladbrokes
+  url: https://www.ladbrokes.com
+  kind: prob
+  weight: 2
+  blurb: Bookmaker odds, converted to an implied probability. Bookmakers price to balance their book, not to be right, so they carry less weight than a market.
+- id: marginal-revolution
+  name: Marginal Revolution
+  url: https://marginalrevolution.com
+  kind: rank
+  weight: 1.5
+  blurb: Tyler Cowen's annual picks, in his order. One well-read economist's judgment, published before the announcement every year.
+- id: cheap-talk
+  name: Cheap Talk pool
+  url: https://cheaptalk.org
+  kind: share
+  weight: 1
+  blurb: The Kellogg School blog's annual prediction pool. A crowd of economists voting, reported as shares.
+- id: hse
+  name: HSE prediction contest
+  url: https://www.hse.ru
+  kind: share
+  weight: 1
+  blurb: HSE University's annual open prediction contest. Aggregates informed opinion, reported as shares of entries.
+- id: kmikeym
+  name: KmikeyM desk
+  url: https://nobel.quarterly.systems
+  kind: named
+  weight: 0.5
+  blurb: Our own calls. Deliberately light, so the desk can flag a sleeper without bending the board.

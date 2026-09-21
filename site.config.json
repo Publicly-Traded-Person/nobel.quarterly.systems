@@ -1,0 +1,24 @@
+{
+  "title": "KmikeyM Covers the Econ Nobel",
+  "url": "https://nobel.quarterly.systems",
+  "themes": {
+    "market-design": "Market design",
+    "macro": "Macro",
+    "monetary": "Monetary",
+    "io": "Industrial organization",
+    "behavioral": "Behavioral",
+    "development": "Development",
+    "labor": "Labor",
+    "finance": "Finance",
+    "trade": "Trade",
+    "theory": "Theory",
+    "econometrics": "Econometrics",
+    "growth": "Growth",
+    "public": "Public economics",
+    "inequality": "Inequality",
+    "innovation": "Innovation and firms",
+    "environment": "Environment",
+    "political": "Political economy"
+  },
+  "tiers": { "lock": 70, "contender": 40, "darkhorse": 15 }
+}

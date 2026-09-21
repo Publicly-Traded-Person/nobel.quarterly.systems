@@ -114,16 +114,34 @@ test("movement is previous rank minus current, or new [M5]", () => {
       update("u2", "2026-09-02", [{ source: "polymarket", candidate: "b", kind: "prob", value: 1 }]),
     ]),
   );
-  // Snapshot 1: Alice and Bob tie at 100, alphabetical → Alice 1, Bob 2.
+  // Snapshot 1: Alice and Bob tie at 100 → both rank 1, Carol rank 3.
   const b1 = t[0]!.standings.find((s) => s.id === "b")!;
-  expect(b1.rank).toBe(2);
+  expect(b1.rank).toBe(1);
   expect(b1.movement).toBe("new");
-  // Snapshot 2: Bob 100, Alice 50 → Bob moves 2 → 1.
+  expect(t[0]!.standings.find((s) => s.id === "c")!.rank).toBe(3);
+  // Snapshot 2: Bob 100, Alice 50 → Bob stays 1, Alice 1 → 2.
   const b2 = t[1]!.standings.find((s) => s.id === "b")!;
   expect(b2.rank).toBe(1);
-  expect(b2.movement).toBe(1);
+  expect(b2.movement).toBe(0);
   const a2 = t[1]!.standings.find((s) => s.id === "a")!;
+  expect(a2.rank).toBe(2);
   expect(a2.movement).toBe(-1);
+});
+
+test("ties sort by last name and share a rank", () => {
+  const s = site([update("u1", "2026-09-01", [
+    { source: "clarivate", candidate: "a", kind: "named", value: 1 },
+    { source: "clarivate", candidate: "b", kind: "named", value: 1 },
+    { source: "clarivate", candidate: "c", kind: "named", value: 1 },
+  ])]);
+  s.candidates = [
+    { id: "a", name: "Zed Adams", affiliation: "", theme: "macro", bodyHtml: "" },
+    { id: "b", name: "Amy Zimmer", affiliation: "", theme: "macro", bodyHtml: "" },
+    { id: "c", name: "Bo Miller", affiliation: "", theme: "macro", bodyHtml: "" },
+  ];
+  const st = computeTimeline(s)[0]!.standings;
+  expect(st.map((x) => x.id)).toEqual(["a", "c", "b"]);
+  expect(st.map((x) => x.rank)).toEqual([1, 1, 1]);
 });
 
 test("one snapshot per update, in order [M6]", () => {

@@ -56,6 +56,7 @@ export function layout(
 <title>${esc(full)}</title>
 <meta name="description" content="${esc(opts.description ?? "KmikeyM covers the Economics Nobel like a sports desk.")}">
 <link rel="alternate" type="application/rss+xml" title="${esc(site.config.title)} updates" href="/feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/style.css">
 ${opts.head ?? ""}
 </head>
@@ -165,12 +166,19 @@ function updateCard(u: Update): string {
 
 export function renderHome(site: Site, timeline: Timeline): string {
   const latest = timeline[timeline.length - 1];
-  const leader = latest ? site.candidates.find((c) => c.id === latest.standings[0]?.id) : undefined;
+  const nameOf = new Map(site.candidates.map((c) => [c.id, c.name]));
+  const top = latest ? latest.standings.filter((s) => s.rank === 1) : [];
+  const leaderLine =
+    top.length === 1
+      ? ` · Leader: <strong>${esc(nameOf.get(top[0]!.id) ?? top[0]!.id)}</strong> at ${top[0]!.composite.toFixed(1)}`
+      : top.length > 1
+        ? ` · Tied at the top, ${top[0]!.composite.toFixed(1)}: ${top.map((s) => `<strong>${esc(nameOf.get(s.id) ?? s.id)}</strong>`).join(", ")}`
+        : "";
   const hero = latest
     ? `<section class="hero">
 <h1>KmikeyM Power Rankings</h1>
 <p class="lede">Who wins the ${latest.date.slice(0, 4)} Economics Nobel. One composite score over every prediction source we track, re-ranked with each update. <a href="/score/">How the score works</a>.</p>
-<p class="asof">As of <a href="/updates/${esc(latest.slug)}/">${prettyDate(latest.date)}</a>${leader ? ` · Leader: <strong>${esc(leader.name)}</strong> at ${latest.standings[0]!.composite.toFixed(1)}` : ""}</p>
+<p class="asof">As of <a href="/updates/${esc(latest.slug)}/">${prettyDate(latest.date)}</a>${leaderLine}</p>
 ${rankingsTable(site, latest)}
 </section>`
     : `<section class="hero"><h1>KmikeyM Power Rankings</h1><p>No updates yet.</p></section>`;
