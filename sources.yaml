@@ -36,12 +36,6 @@
   kind: rank
   weight: 1.5
   blurb: Tyler Cowen's annual picks, in his order. One well-read economist's judgment, published before the announcement every year.
-- id: cheap-talk
-  name: Cheap Talk pool
-  url: https://cheaptalk.org
-  kind: share
-  weight: 1
-  blurb: The Kellogg School blog's annual prediction pool. A crowd of economists voting, reported as shares.
 - id: hse
   name: HSE prediction contest
   url: https://www.hse.ru
