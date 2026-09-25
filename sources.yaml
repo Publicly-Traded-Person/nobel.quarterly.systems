@@ -44,7 +44,6 @@
   blurb: HSE University's annual open prediction contest. Aggregates informed opinion, reported as shares of entries.
 - id: kmikeym
   name: KmikeyM desk
-  url: https://nobel.quarterly.systems
   kind: named
   weight: 0.5
   blurb: Our own calls. Deliberately light, so the desk can flag a sleeper without bending the board.

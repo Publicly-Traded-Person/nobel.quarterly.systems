@@ -324,7 +324,7 @@ export function renderScore(site: Site, timeline: Timeline): string {
 <h2>Step 2: sources carry weights</h2>
 <p>The weights are our editorial call. They are published here, from the same file the build reads, so what you see is what the score uses.</p>
 <table class="example"><thead><tr><th>Source</th><th>Kind</th><th>Weight</th><th>Why</th></tr></thead><tbody>
-${site.sources.map((s) => `<tr><td><a href="${esc(s.url)}">${esc(s.name)}</a></td><td><code>${s.kind}</code></td><td>${s.weight}</td><td>${esc(s.blurb)}</td></tr>`).join("")}
+${site.sources.map((s) => `<tr><td>${s.url ? `<a href="${esc(s.url)}">${esc(s.name)}</a>` : esc(s.name)}</td><td><code>${s.kind}</code></td><td>${s.weight}</td><td>${esc(s.blurb)}</td></tr>`).join("")}
 </tbody></table>
 <h2>Step 3: the composite</h2>
 <p>A candidate's composite is the sum of <em>weight × heat</em> across sources, divided by the total weight of every source that has published anything so far. A source that has not published yet is ignored entirely, so a Clarivate name in September sits high until the markets open. When a new source comes online, everyone it ignores drops and everyone it names rises. That reshuffle is the season, and the <a href="/replay/">replay</a> shows it.</p>
@@ -364,7 +364,7 @@ export function renderSources(site: Site): string {
 ${site.sources
   .map(
     (s) =>
-      `<li><h3><a href="${esc(s.url)}">${esc(s.name)}</a> <span class="badge">${s.kind}</span> <span class="badge badge-w">weight ${s.weight}</span></h3><p>${esc(s.blurb)}</p></li>`,
+      `<li><h3>${s.url ? `<a href="${esc(s.url)}">${esc(s.name)}</a>` : esc(s.name)} <span class="badge">${s.kind}</span> <span class="badge badge-w">weight ${s.weight}</span></h3><p>${esc(s.blurb)}</p></li>`,
   )
   .join("\n")}
 </ul>
