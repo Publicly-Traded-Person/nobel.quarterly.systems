@@ -125,6 +125,7 @@ time { color: var(--muted); font-size: 0.9rem; font-variant-numeric: tabular-num
 .update-card h3 a { text-decoration: none; }
 .update-card p { margin: 0 0 6px; }
 .more { font-size: 0.9rem; }
+.all-updates { margin-top: 20px; font-weight: 600; }
 
 /* Update page */
 .update h1, .candidate h1 { margin-top: 4px; }

@@ -9,6 +9,7 @@ import {
   renderScore,
   renderSources,
   renderUpdate,
+  renderUpdates,
 } from "../src/render";
 import type { Site, Timeline } from "../src/types";
 
@@ -67,6 +68,19 @@ describe("render", () => {
     const html = renderReplay(site);
     expect(html).toContain('type="range"');
     expect(html).toMatch(/replay(\.[a-f0-9]+)?\.js/);
+  });
+
+  test("updates page lists every update, newest first, and the nav links to it", () => {
+    const html = renderUpdates(site);
+    for (const u of site.updates) expect(html).toContain(u.title);
+    const newest = site.updates[site.updates.length - 1]!.title;
+    const oldest = site.updates[0]!.title;
+    expect(html.indexOf(newest)).toBeLessThan(html.indexOf(oldest));
+    expect(html).toContain(`<a href="/updates/" aria-current="page">`);
+  });
+
+  test("home links to the updates page", () => {
+    expect(renderHome(site, timeline)).toContain(`href="/updates/"`);
   });
 
   test("sources page lists every source", () => {

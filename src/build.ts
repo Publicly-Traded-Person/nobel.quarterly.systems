@@ -13,6 +13,7 @@ import {
   renderScore,
   renderSources,
   renderUpdate,
+  renderUpdates,
 } from "./render";
 
 const ASSETS = join(dirname(new URL(import.meta.url).pathname), "assets");
@@ -47,6 +48,7 @@ export async function build(root: string, out: string): Promise<void> {
   await write("score/index.html", renderScore(site, timeline));
   await write("replay/index.html", renderReplay(site));
   await write("sources/index.html", renderSources(site));
+  await write("updates/index.html", renderUpdates(site));
   await write("feed.xml", renderFeed(site));
   for (const u of site.updates)
     await write(`updates/${u.slug}/index.html`, renderUpdate(site, timeline, u));

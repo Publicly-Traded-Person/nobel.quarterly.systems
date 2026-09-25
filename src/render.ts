@@ -34,6 +34,7 @@ export function prettyDate(iso: string): string {
 function nav(active: string): string {
   const items: [string, string][] = [
     ["/", "Rankings"],
+    ["/updates/", "Updates"],
     ["/replay/", "Replay"],
     ["/score/", "How the score works"],
     ["/sources/", "Sources"],
@@ -180,6 +181,18 @@ function updateCard(u: Update): string {
 </article>`;
 }
 
+// The front page shows the newest few; /updates/ holds the full list.
+const HOME_UPDATES = 3;
+
+export function renderUpdates(site: Site): string {
+  const body = `<section class="feed">
+<h1>Updates</h1>
+<p class="lede">Every update, newest first. Each one records what the sources said that day and how it moved the Power Rankings. The KmikeyM desk writes them.</p>
+${[...site.updates].reverse().map(updateCard).join("\n")}
+</section>`;
+  return layout(site, { title: "Updates", active: "/updates/", body, description: "Every KmikeyM update on the Economics Nobel race, newest first." });
+}
+
 export function renderHome(site: Site, timeline: Timeline): string {
   const latest = timeline[timeline.length - 1];
   const nameOf = new Map(site.candidates.map((c) => [c.id, c.name]));
@@ -198,9 +211,11 @@ export function renderHome(site: Site, timeline: Timeline): string {
 ${rankingsTable(site, latest)}
 </section>`
     : `<section class="hero"><h1>KmikeyM Power Rankings</h1><p>No updates yet.</p></section>`;
+  const recent = [...site.updates].reverse().slice(0, HOME_UPDATES);
   const feed = `<section class="feed">
-<h2>Updates</h2>
-${[...site.updates].reverse().map(updateCard).join("\n")}
+<h2>Latest updates</h2>
+${recent.map(updateCard).join("\n")}
+<p class="all-updates"><a href="/updates/">All ${site.updates.length} updates</a></p>
 </section>`;
   return layout(site, { title: site.config.title, active: "/", body: hero + feed });
 }
@@ -238,7 +253,7 @@ ${obsList}
 </aside>
 ${snap ? `<section class="board-then"><h2>The board after this update</h2>${rankingsTable(site, snap)}</section>` : ""}
 </article>`;
-  return layout(site, { title: u.title, active: "", body, description: u.summary });
+  return layout(site, { title: u.title, active: "/updates/", body, description: u.summary });
 }
 
 export function renderCandidate(site: Site, timeline: Timeline, c: Candidate): string {
