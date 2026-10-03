@@ -1,7 +1,7 @@
 ---
-title: Pakes pulls ahead, and Athey's 60 unwinds
+title: Pakes pulls ahead on Kalshi, and Athey's 60 unwinds
 date: 2026-10-01
-summary: Eleven days out, Ariel Pakes leads Kalshi at 24 cents on steady buying and a two-cent spread. Susan Athey's 60-cent print from last week has unwound to 15. Every name on the market has now traded. HSE's contest is open with no tally until the prize, Cowen has named nobody, and there is still no bookmaker or Polymarket market for economics.
+summary: Eleven days out, Ariel Pakes leads Kalshi at 24 cents on steady buying and a two-cent spread. Susan Athey's 60-cent print from last week has unwound to 15, though she still leads our Power Rankings. Every name on the market has now traded. HSE's contest is open with no tally until the prize, Cowen has named nobody, and there is still no bookmaker or Polymarket market for economics.
 observations:
   - source: kalshi
     candidate: ariel-pakes
@@ -53,7 +53,7 @@ Last week the [Kalshi market](https://kalshi.com/markets/kxnobelecon/nobel-econo
 
 **Pakes.** [Ariel Pakes](/candidates/ariel-pakes/) ended last Thursday at 18, the bottom of a midnight selloff. Since Friday buyers have taken him at 22, 23 and 24 again and again, the biggest a 70-contract fill at 23 on Tuesday. His spread has closed from 15/22 to 22/24. That is the tightest book on the market, and the first time this season a price has held for days on real volume.
 
-**Athey.** [Susan Athey](/candidates/susan-athey/)'s 60 from last Thursday was three contracts, and it is gone. She was sold down to 8 and 9 on Monday night and bought back at 14 to 16 on Wednesday. She reads 15 on our board, which records the last trade. Her resting quote is 25 bid, 50 ask, on one contract each side, so it says almost nothing. She still has the second-largest open interest on the market, after Pakes.
+**Athey.** [Susan Athey](/candidates/susan-athey/)'s 60 from last Thursday was three contracts, and it is gone. She was sold down to 8 and 9 on Monday night and bought back at 14 to 16 on Wednesday. She reads 15 on our board, which records the last trade. Her resting quote is 25 bid, 50 ask, on one contract each side, so it says almost nothing. She still has the second-largest open interest on the market, after Pakes. On our [Power Rankings](/) she stays first at 49.3, down from 68.6, because Clarivate backs her too. Pakes is fifth at 24.6, up from 22.
 
 **The round trips.** Somebody bought 168 contracts of [Richard Blundell](/candidates/richard-blundell/) at 14 on Saturday and sold exactly 168 at 8 on Wednesday. [Luigi Zingales](/candidates/luigi-zingales/) got a burst of about 177 contracts at 6 to 9 on Sunday night, sold back to 2 within a day. Both look like one trader in and out, not a change of view.
 
