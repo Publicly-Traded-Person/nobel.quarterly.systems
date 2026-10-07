@@ -14,10 +14,10 @@
   blurb: Everyone Clarivate named in an earlier year who has not won yet. Still a real signal, since most Citation Laureates who win do so years after being named, but a weaker one than this year's list.
 - id: polymarket
   name: Polymarket
-  url: https://polymarket.com
+  url: https://polymarket.com/event/nobel-economics-prize-winner-2026
   kind: prob
   weight: 3
-  blurb: A prediction market with real money on it. No 2026 Economics Nobel market as of Sept 20; its Peace and Literature markets open much earlier than economics. Enters the board when it lists one.
+  blurb: A prediction market with real money on it. Its 2026 Economics Nobel market opened October 6, six days before the announcement, with seventeen names and more volume on day one than Kalshi's whole season. We record the price Polymarket displays, the midpoint of its book; best bid, ask and volume ride in the note. Kept separate from Kalshi so the two can disagree in public.
 - id: kalshi
   name: Kalshi
   url: https://kalshi.com/markets/kxnobelecon/nobel-economics-prize/kxnobelecon-26
@@ -29,7 +29,7 @@
   url: https://www.ladbrokes.com
   kind: prob
   weight: 2
-  blurb: Bookmaker odds, converted to an implied probability. Bookmakers price to balance their book, not to be right, so they carry less weight than a market.
+  blurb: Bookmaker odds, converted to an implied probability. Bookmakers price to balance their book, not to be right, so they carry less weight than a market. No UK book had posted a 2026 economics market as of October 6; they price Literature and Peace and skip this one.
 - id: marginal-revolution
   name: Marginal Revolution
   url: https://marginalrevolution.com
@@ -38,7 +38,7 @@
   blurb: Tyler Cowen's annual picks, in his order. One well-read economist's judgment, published before the announcement every year.
 - id: hse
   name: HSE prediction contest
-  url: https://www.hse.ru
+  url: https://economics.hse.ru/polls/1201629576.html
   kind: share
   weight: 1
   blurb: HSE University's annual open prediction contest. Aggregates informed opinion, reported as shares of entries.
@@ -48,3 +48,45 @@
   kind: named
   weight: 0.5
   blurb: Our own calls. Deliberately light, so the desk can flag a sleeper without bending the board.
+- id: prophet-arena
+  name: Prophet Arena AI consensus
+  url: https://www.prophetarena.co/events/KXNOBELECON-26
+  kind: prob
+  weight: 1.5
+  blurb: Ten frontier language models (Claude, GPT, Gemini, DeepSeek, GLM, Kimi) each forecast the nine Kalshi names from a shared research briefing, and the site averages them. We record the consensus. It is the market's own question put to machines instead of money, so it earns half a market's weight. Closes October 13.
+- id: octagon
+  name: Octagon AI model
+  url: https://www.octagonai.co/markets/science-and-technology/physics-math/nobel-prize-in-economics-2026
+  kind: prob
+  weight: 0.5
+  blurb: A single AI model's probabilities over the Kalshi names, with an undisclosed method and a last-updated date of July 28. Stale and sparse, so it carries little weight, but it is a second machine opinion and it disagrees with the first.
+- id: tol
+  name: Richard Tol's model
+  url: https://richardtol.substack.com/p/2026-nobel-memorial-prize
+  kind: rank
+  weight: 1.5
+  blurb: A statistical reconstruction of every past prize, published as a paper, that scores 161 living candidates on citations, coauthorship with earlier laureates and the historical rotation between fields, then lists the top ten. Published each September since 2025. The only source on the board that is a model of the committee rather than a guess about the economists.
+- id: cunningham
+  name: Scott Cunningham
+  url: https://causalinf.substack.com/p/nobel-prize-predictions-for-the-wages
+  kind: rank
+  weight: 1.5
+  blurb: An annual ranked list from the author of Causal Inference, the Mixtape, published every October since 2021 behind a paywall. We record the order as reported publicly, since we cannot read the post ourselves, and say so in the note.
+- id: decker
+  name: Nicholas Decker
+  url: https://x.com/captgouda24/status/2106842872351703300
+  kind: named
+  weight: 1
+  blurb: A long-form economics writer who posts one confident prediction a year with an essay behind it. In 2025 he named Berry, Hausman and Pakes, then wrote that the committee would instead go to Aghion and Howitt, which it did. Second year on record.
+- id: mindel
+  name: Maia Mindel
+  url: https://x.com/maiamindel
+  kind: named
+  weight: 0.5
+  blurb: An economics writer's picks posted as a thread on X. We have the names secondhand, from a roundup, and could not retrieve the thread itself; the weight reflects that. One year on record.
+- id: tomas-bata
+  name: Tomas Bata University contest
+  url: https://fame.utb.cz/en/news-events/who-will-win-the-nobel-prize-in-economic-sciences-this-year/
+  kind: share
+  weight: 0.5
+  blurb: An annual guessing game run by the economics department at Tomas Bata University in Zlin, parallel to HSE's. Entries by email through October 11, results announced with the prize. Enters the board when the tally is published.
