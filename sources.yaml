@@ -23,7 +23,7 @@
   url: https://kalshi.com/markets/kxnobelecon/nobel-economics-prize/kxnobelecon-26
   kind: prob
   weight: 3
-  blurb: A regulated US prediction market. Its 2026 Economics Nobel market opened July 1 with nine names. We record the price Kalshi displays, the last trade, and fall back to the midpoint of the best yes bid and ask for contracts that have never traded. Bid and ask ride in the note, since the book is thin. Kept separate from Polymarket so the two can disagree in public.
+  blurb: A regulated US prediction market. Its 2026 Economics Nobel market opened July 1 with nine names and added Emmanuel Saez, Thomas Piketty and Sendhil Mullainathan on October 7. We record the price Kalshi displays, the last trade, and fall back to the midpoint of the best yes bid and ask for contracts that have never traded. Bid and ask ride in the note, since the book is thin. Kept separate from Polymarket so the two can disagree in public.
 - id: ladbrokes
   name: Ladbrokes
   url: https://www.ladbrokes.com
