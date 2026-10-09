@@ -20,5 +20,10 @@
     "environment": "Environment",
     "political": "Political economy"
   },
-  "tiers": { "lock": 70, "contender": 40, "darkhorse": 15 }
+  "tiers": { "lock": 70, "contender": 40, "darkhorse": 15 },
+  "announcement": {
+    "at": "2026-10-12T09:45:00Z",
+    "label": "Monday, October 12, at 11:45 CEST at the earliest (02:45 Pacific)",
+    "url": "https://www.nobelprize.org/press-release/the-2026-nobel-prize-announcements/"
+  }
 }

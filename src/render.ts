@@ -193,6 +193,14 @@ ${[...site.updates].reverse().map(updateCard).join("\n")}
   return layout(site, { title: "Updates", active: "/updates/", body, description: "Every KmikeyM update on the Economics Nobel race, newest first." });
 }
 
+function announcementLine(site: Site): string {
+  const a = site.config.announcement;
+  if (!a) return "";
+  const when = a.url ? `<a href="${esc(a.url)}">${esc(a.label)}</a>` : esc(a.label);
+  return `<p class="announce" data-at="${esc(a.at)}">The prize is announced ${when}<span class="countdown"></span>.</p>
+<script>(function(){var p=document.querySelector(".announce");if(!p)return;var at=Date.parse(p.getAttribute("data-at"));var c=p.querySelector(".countdown");function tick(){var ms=at-Date.now();if(ms<=0){c.textContent=", and the announcement has been made";return;}var h=Math.floor(ms/36e5),d=Math.floor(h/24);h-=d*24;c.textContent=", in "+(d?d+(d===1?" day ":" days "):"")+h+(h===1?" hour":" hours");}tick();setInterval(tick,6e4);})();</script>`;
+}
+
 export function renderHome(site: Site, timeline: Timeline): string {
   const latest = timeline[timeline.length - 1];
   const nameOf = new Map(site.candidates.map((c) => [c.id, c.name]));
@@ -208,6 +216,7 @@ export function renderHome(site: Site, timeline: Timeline): string {
 <h1>KmikeyM Power Rankings</h1>
 <p class="lede">Who wins the ${latest.date.slice(0, 4)} Economics Nobel. One composite score over every prediction source we track, re-ranked with each update. <a href="/score/">How the score works</a>.</p>
 <p class="asof">As of <a href="/updates/${esc(latest.slug)}/">${prettyDate(latest.date)}</a>${leaderLine}</p>
+${announcementLine(site)}
 ${rankingsTable(site, latest)}
 </section>`
     : `<section class="hero"><h1>KmikeyM Power Rankings</h1><p>No updates yet.</p></section>`;

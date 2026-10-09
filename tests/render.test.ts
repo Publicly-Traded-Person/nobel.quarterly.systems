@@ -34,6 +34,14 @@ describe("render", () => {
     expect(html).toContain("Alice makes the list.");
   });
 
+  test("home shows the announcement line only when the config has one", () => {
+    expect(renderHome(site, timeline)).not.toContain("class=\"announce\"");
+    const withIt: Site = { ...site, config: { ...site.config, announcement: { at: "2026-10-12T09:45:00Z", label: "Monday, October 12", url: "https://example.test/when" } } };
+    const html = renderHome(withIt, timeline);
+    expect(html).toContain("class=\"announce\" data-at=\"2026-10-12T09:45:00Z\"");
+    expect(html).toContain("<a href=\"https://example.test/when\">Monday, October 12</a>");
+  });
+
   test("update page has prose and observation sentences [M2]", () => {
     const html = renderUpdate(site, timeline, site.updates[1]!);
     expect(html).toContain("<p>The market disagrees with Clarivate. Good.</p>");

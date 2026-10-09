@@ -83,7 +83,17 @@ async function loadConfig(root: string): Promise<SiteConfig> {
     contender: num(file, tiersRaw, "contender"),
     darkhorse: num(file, tiersRaw, "darkhorse"),
   };
-  return { title, url, themes: themes as Record<string, string>, tiers };
+  let announcement: SiteConfig["announcement"];
+  if (c.announcement !== undefined) {
+    const a = c.announcement as Record<string, unknown> | null;
+    if (!a || typeof a !== "object") throw new LoadError(file, "announcement", "must be a mapping");
+    const at = str(file, a, "at");
+    if (Number.isNaN(Date.parse(at))) throw new LoadError(file, "announcement.at", "must be an ISO date-time");
+    const label = str(file, a, "label");
+    announcement = { at, label };
+    if (a.url !== undefined) announcement.url = str(file, a, "url");
+  }
+  return { title, url, themes: themes as Record<string, string>, tiers, ...(announcement ? { announcement } : {}) };
 }
 
 async function loadSources(root: string): Promise<Source[]> {

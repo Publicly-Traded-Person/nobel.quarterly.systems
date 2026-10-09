@@ -42,6 +42,8 @@ export type SiteConfig = {
   url: string;
   themes: Record<string, string>;
   tiers: { lock: number; contender: number; darkhorse: number };
+  /** Optional. When the prize is announced; the home page shows it with a countdown. */
+  announcement?: { at: string; label: string; url?: string };
 };
 
 export type Site = {
